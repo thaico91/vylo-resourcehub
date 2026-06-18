@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VYLO — Resource Hub</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F1E9D8;
+    --paper-dim:#E6DAC0;
+    --ink:#1C1714;
+    --ink-soft:#4B4239;
+    --lacquer:#7A2530;
+    --brass:#A87C2E;
+    --jade:#3F5B4D;
+    --line: rgba(28,23,20,0.16);
+    --radius: 2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Sans 3', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    margin:0;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--lacquer);
+  }
+  a{color:var(--lacquer);}
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ===== NAV ===== */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(241,233,216,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:16px; padding-bottom:16px;
+  }
+  .logo{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:1.3rem;
+    letter-spacing:0.02em;
+  }
+  .logo span{color:var(--lacquer);}
+  .navlinks{display:flex; gap:28px; font-family:'IBM Plex Mono', monospace; font-size:0.78rem; letter-spacing:0.04em;}
+  .navlinks a{color:var(--ink); text-decoration:none; text-transform:uppercase;}
+  .navlinks a:hover{color:var(--lacquer);}
+
+  /* ===== HERO ===== */
+  .hero{
+    padding:96px 0 80px;
+    position:relative;
+    border-bottom:1px solid var(--line);
+  }
+  .hero .wrap{display:flex; gap:56px; align-items:flex-start; flex-wrap:wrap;}
+  .hero-text{flex:1 1 480px; max-width:560px;}
+  .hero h1{
+    font-size:2.6rem;
+    line-height:1.12;
+    margin:14px 0 22px;
+  }
+  .hero p.lede{
+    font-size:1.05rem;
+    line-height:1.6;
+    color:var(--ink-soft);
+    max-width:480px;
+  }
+  .stamp-wrap{flex:0 0 auto; display:flex; justify-content:center; padding-top:8px;}
+  .stamp{
+    width:168px; height:168px;
+    border:2px solid var(--brass);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    transform:rotate(-9deg);
+    position:relative;
+    color:var(--brass);
+  }
+  .stamp::before{
+    content:"";
+    position:absolute; inset:10px;
+    border:1px dashed var(--brass);
+    border-radius:50%;
+  }
+  .stamp-inner{
+    text-align:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.62rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    line-height:1.7;
+  }
+  .stamp-inner strong{
+    display:block;
+    font-family:'Fraunces', serif;
+    font-size:1.05rem;
+    letter-spacing:0;
+    text-transform:none;
+    color:var(--lacquer);
+    margin-bottom:2px;
+  }
+  .stat-row{
+    display:flex; gap:36px; margin-top:36px; flex-wrap:wrap;
+  }
+  .stat-row div{font-family:'IBM Plex Mono', monospace;}
+  .stat-num{font-size:1.5rem; color:var(--lacquer); font-weight:500;}
+  .stat-label{font-size:0.7rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.06em;}
+
+  /* ===== SECTION HEADERS ===== */
+  section{padding:72px 0; border-bottom:1px solid var(--line);}
+  .sec-head{display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:36px; gap:24px; flex-wrap:wrap;}
+  .sec-head h2{font-size:1.9rem;}
+  .sec-head p{color:var(--ink-soft); max-width:420px; font-size:0.95rem; line-height:1.5; margin-top:8px;}
+
+  /* ===== FILTER BAR ===== */
+  .filters{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:32px;}
+  .filter-btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    padding:8px 14px;
+    border:1px solid var(--line);
+    background:transparent;
+    color:var(--ink-soft);
+    border-radius:20px;
+    cursor:pointer;
+    transition:all .15s ease;
+  }
+  .filter-btn:hover{border-color:var(--lacquer); color:var(--lacquer);}
+  .filter-btn.active{background:var(--ink); color:var(--paper); border-color:var(--ink);}
+
+  /* ===== CASE FILE GRID ===== */
+  .case-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
+  .case-card{
+    position:relative;
+    background:var(--paper-dim);
+    border:1px solid var(--line);
+    padding:24px 24px 22px 38px;
+    cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .case-card:hover{transform:translateY(-3px); box-shadow:0 10px 24px rgba(28,23,20,0.10);}
+  .case-card::before{
+    content:attr(data-case);
+    position:absolute; left:0; top:0; bottom:0; width:26px;
+    background:var(--brass);
+    color:var(--paper);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.62rem;
+    letter-spacing:0.08em;
+    display:flex; align-items:center; justify-content:center;
+    writing-mode:vertical-rl;
+    text-orientation:mixed;
+    text-transform:uppercase;
+  }
+  .case-card h3{font-size:1.25rem; margin-bottom:4px;}
+  .case-role{font-size:0.85rem; color:var(--ink-soft); margin-bottom:2px;}
+  .case-school{font-size:0.78rem; color:var(--ink-soft); font-style:italic; margin-bottom:12px;}
+  .case-blurb{font-size:0.88rem; line-height:1.5; color:var(--ink-soft); margin-bottom:14px;}
+  .tag-row{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:14px;}
+  .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.62rem;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    padding:3px 8px;
+    border:1px solid var(--jade);
+    color:var(--jade);
+    border-radius:12px;
+  }
+  .open-btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    color:var(--lacquer);
+    border:none; background:none; cursor:pointer; padding:0;
+  }
+  .open-btn::after{content:" →";}
+
+  /* ===== COMING SOON GRID ===== */
+  .soon-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  .soon-card{
+    border:1px dashed var(--line);
+    padding:22px 20px;
+    opacity:0.72;
+    position:relative;
+  }
+  .soon-card h4{font-family:'Fraunces', serif; font-size:1.05rem; font-weight:600; margin-bottom:8px;}
+  .soon-card p{font-size:0.82rem; color:var(--ink-soft); line-height:1.5; margin:0;}
+  .soon-tag{
+    position:absolute; top:18px; right:18px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.6rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--brass);
+    border:1px solid var(--brass);
+    padding:2px 7px;
+    border-radius:10px;
+  }
+
+  /* ===== TRAINING CARDS (with video) ===== */
+  .training-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
+  .training-card{
+    position:relative;
+    background:var(--paper-dim);
+    border:1px solid var(--line);
+    padding:18px;
+  }
+  .training-card h4{font-family:'Fraunces', serif; font-size:1.1rem; font-weight:600; margin:0 0 6px;}
+  .training-card p{font-size:0.85rem; color:var(--ink-soft); line-height:1.5; margin:0;}
+  .training-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.6rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:2px 7px;
+    border-radius:10px;
+    display:inline-block;
+    margin-bottom:12px;
+  }
+  .training-tag.live{color:var(--jade); border:1px solid var(--jade);}
+  .training-tag.dev{color:var(--brass); border:1px solid var(--brass);}
+  .video-wrap{
+    position:relative; width:100%; padding-top:56.25%;
+    background:var(--ink); margin-bottom:14px; overflow:hidden;
+  }
+  .video-wrap iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
+  .video-placeholder{
+    width:100%; padding-top:56.25%; position:relative;
+    border:1px dashed var(--line); margin-bottom:14px;
+  }
+  .video-placeholder span{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    font-family:'IBM Plex Mono', monospace; font-size:0.68rem; text-transform:uppercase;
+    letter-spacing:0.06em; color:var(--ink-soft);
+  }
+
+  /* ===== RESEARCH BRIEFS ===== */
+  .brief-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
+  .brief-card{
+    position:relative;
+    background:var(--paper-dim);
+    border:1px solid var(--line);
+    padding:24px 24px 22px 38px;
+    cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .brief-card:hover{transform:translateY(-3px); box-shadow:0 10px 24px rgba(28,23,20,0.10);}
+  .brief-card::before{
+    content:attr(data-brief);
+    position:absolute; left:0; top:0; bottom:0; width:26px;
+    background:var(--jade);
+    color:var(--paper);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.62rem;
+    letter-spacing:0.08em;
+    display:flex; align-items:center; justify-content:center;
+    writing-mode:vertical-rl;
+    text-orientation:mixed;
+    text-transform:uppercase;
+  }
+  .brief-card h3{font-size:1.2rem; margin-bottom:10px; line-height:1.3;}
+  .source-count{
+    font-family:'IBM Plex Mono', monospace; font-size:0.7rem; color:var(--ink-soft);
+    text-transform:uppercase; letter-spacing:0.04em; margin-bottom:14px;
+  }
+  .takeaway-block{
+    margin-top:22px; padding:16px 18px;
+    background:rgba(63,91,77,0.08);
+    border-left:3px solid var(--jade);
+  }
+  .takeaway-block .eyebrow{color:var(--jade);}
+  .takeaway-block p{font-size:0.92rem; line-height:1.6; margin:6px 0 0; color:var(--ink);}
+  .source-item{
+    margin-top:16px; padding-top:14px; border-top:1px solid var(--line);
+  }
+  .source-top{display:flex; align-items:center; gap:8px; margin-bottom:6px; flex-wrap:wrap;}
+  .source-type{
+    font-family:'IBM Plex Mono', monospace; font-size:0.62rem; text-transform:uppercase;
+    letter-spacing:0.05em; padding:2px 8px; border-radius:10px;
+  }
+  .source-type.book{color:var(--brass); border:1px solid var(--brass);}
+  .source-type.video{color:var(--lacquer); border:1px solid var(--lacquer);}
+  .source-type.article{color:var(--jade); border:1px solid var(--jade);}
+  .source-title{font-family:'Fraunces', serif; font-weight:600; font-size:1rem;}
+  .source-title a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line);}
+  .source-title a:hover{color:var(--lacquer); border-color:var(--lacquer);}
+  .source-note{font-size:0.88rem; color:var(--ink-soft); line-height:1.5; margin-top:4px;}
+
+  /* ===== MODAL ===== */
+  .modal-backdrop{
+    position:fixed; inset:0; background:rgba(28,23,20,0.55);
+    display:none; align-items:flex-start; justify-content:center;
+    padding:48px 20px; overflow-y:auto; z-index:100;
+  }
+  .modal-backdrop.open{display:flex;}
+  .modal{
+    background:var(--paper); max-width:680px; width:100%;
+    border:1px solid var(--line); padding:40px 40px 36px;
+    position:relative;
+  }
+  .modal-close{
+    position:absolute; top:18px; right:18px;
+    background:none; border:none; font-size:1.4rem; cursor:pointer;
+    color:var(--ink-soft); font-family:'IBM Plex Mono', monospace;
+  }
+  .modal h3{font-size:1.7rem; margin-bottom:4px;}
+  .modal .case-role{font-size:0.95rem; margin-top:8px;}
+  .modal .tag-row{margin-top:14px; margin-bottom:6px;}
+  .qa-block{margin-top:26px; padding-top:18px; border-top:1px solid var(--line);}
+  .qa-q{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--lacquer); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:8px;}
+  .qa-a{font-size:0.95rem; line-height:1.6; color:var(--ink);}
+
+  footer{padding:48px 0; }
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  .foot-links{display:flex; gap:20px; font-family:'IBM Plex Mono', monospace; font-size:0.78rem;}
+  .foot-links a{text-decoration:none;}
+  .foot-note{font-size:0.78rem; color:var(--ink-soft); font-family:'IBM Plex Mono', monospace;}
+
+  @media (max-width:760px){
+    .case-grid{grid-template-columns:1fr;}
+    .brief-grid{grid-template-columns:1fr;}
+    .soon-grid{grid-template-columns:1fr;}
+    .training-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:2rem;}
+    .hero .wrap{flex-direction:column;}
+    .stamp-wrap{align-self:center;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important;}
+  }
+  :focus-visible{outline:2px solid var(--lacquer); outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">VY<span>LO</span></div>
+    <div class="navlinks">
+      <a href="#hub">Home</a>
+      <a href="#interviews">Interview Library</a>
+      <a href="#briefs">Research Briefs</a>
+      <a href="#trainings">Trainings</a>
+      <a href="#templates">Templates</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="hub">
+  <div class="wrap">
+    <div class="hero-text">
+      <p class="eyebrow">Vietnamese Youth Leadership Organization</p>
+      <h1>Every club loses everything when its leader graduates.</h1>
+      <p class="lede">VYLO is a student-led resource hub built from real interviews with student leaders who already figured it out — so the next person doesn't have to start from zero.</p>
+      <div class="stat-row">
+        <div><div class="stat-num">5</div><div class="stat-label">Leaders Interviewed</div></div>
+        <div><div class="stat-num">3</div><div class="stat-label">Schools Represented</div></div>
+        <div><div class="stat-num">5</div><div class="stat-label">Trainings In Progress</div></div>
+      </div>
+    </div>
+    <div class="stamp-wrap">
+      <div class="stamp">
+        <div class="stamp-inner">
+          <strong>VYLO</strong>
+          FIELD ARCHIVE<br>EST. 2025
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="interviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Case Files</p>
+        <h2>Interview Library</h2>
+      </div>
+      <p>Real, unedited advice from student leaders — organized by the problems they actually faced. Filter by theme or open a full case file.</p>
+    </div>
+
+    <div class="filters" id="filterBar">
+      <button class="filter-btn active" data-tag="all">All</button>
+      <button class="filter-btn" data-tag="Systems">Systems</button>
+      <button class="filter-btn" data-tag="Delegation">Delegation</button>
+      <button class="filter-btn" data-tag="Marketing">Marketing</button>
+      <button class="filter-btn" data-tag="Team Building">Team Building</button>
+      <button class="filter-btn" data-tag="Mistakes">Mistakes</button>
+    </div>
+
+    <div class="case-grid" id="caseGrid"></div>
+  </div>
+</section>
+
+<section id="briefs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Research Briefs</p>
+        <h2>Lessons From Outside Research</h2>
+      </div>
+      <p>Not interviews — this is research VYLO has gathered and synthesized. Each brief answers one real question by pulling together multiple books, videos, and articles into a single lesson.</p>
+    </div>
+    <div class="brief-grid" id="briefGrid"></div>
+  </div>
+</section>
+
+<section id="trainings">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Live Trainings</p>
+        <h2>Training Library</h2>
+      </div>
+      <p>Workshops built directly from interview insights. Coming soon as each one is built and tested.</p>
+    </div>
+    <div class="training-grid" id="trainingGrid"></div>
+  </div>
+</section>
+
+<section id="templates" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Templates</p>
+        <h2>Downloadable Tools</h2>
+      </div>
+      <p>Ready-to-copy templates pulled directly from what successful clubs actually use.</p>
+    </div>
+    <div class="soon-grid">
+      <div class="soon-card"><span class="soon-tag">Soon</span><h4>Job Description Template</h4><p>A fill-in-the-blank format for any exec role.</p></div>
+      <div class="soon-card"><span class="soon-tag">Soon</span><h4>Task Tracker</h4><p>The four-column system every interviewee independently converged on.</p></div>
+      <div class="soon-card"><span class="soon-tag">Soon</span><h4>Onboarding Doc</h4><p>What a new member should get on day one.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-note">VYLO — Vietnamese Youth Leadership Organization</div>
+    <div class="foot-links">
+      <a href="https://instagram.com/vnyouthleadership" target="_blank" rel="noopener">Instagram</a>
+      <a href="#">YouTube</a>
+      <a href="#">Newsletter</a>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<script>
+const interviews = [
+  {
+    name: "Duc Vinh Nguyen Doan",
+    role: "Founder & President, Pathways",
+    school: "Yale University · Founded in High School",
+    tags: ["Marketing", "Mistakes", "Team Building"],
+    blurb: "Built a free education platform reaching 30 provinces by treating shyness as a feedback loop and ideas as pure meritocracy.",
+    qa: [
+      { q: "What was your biggest challenge as a leader?", a: "Overcoming the pressure of publicly launching something from nothing. The logistics of running events weren't hard — the fear of announcing things before having any track record was. He pushed through by remembering that the biggest risk is taking no risk at all, and treated confidence as a feedback loop: act first, the ease follows." },
+      { q: "If you could go back to your first 90 days, what would you change?", a: "Do more, earlier. He and his team over-planned at the start instead of posting and launching. Once they finally posted twice and ran one event, traction built immediately. His regret is purely about timing — starting sooner would have meant a bigger head start." },
+      { q: "What roles would you prioritize first?", a: "Entirely dependent on the org. For his content-heavy platform: a strong video editor, marketing-data thinkers, and people willing to be on camera. His broader rule — you can't rank roles universally, every organization needs all of its core functions eventually." },
+      { q: "What tool or process saved you the most time?", a: "Moving from Messenger and spreadsheets to Google Classroom. The shift to formal task assignments with email notifications cut down on missed tasks significantly — though getting students to actually check it remained an ongoing effort." },
+      { q: "How did you get people outside your team to care?", a: "Instagram, posted consistently — sometimes every two to three days at peak times — combined with strong video editing and asking bigger accounts to share their content. He treated early content like prototypes, adjusting based on what actually got traction." },
+      { q: "Final advice for student leaders?", a: "Prioritize marketing and reach from day one, and ask for help shamelessly. The people who succeed are usually just the ones willing to make the uncomfortable ask." }
+    ]
+  },
+  {
+    name: "Jae Eun Koh",
+    role: "Student Council · TEDx · MUN",
+    school: "Concordia Hanoi (2025) → University of Pennsylvania",
+    tags: ["Delegation", "Systems", "Team Building"],
+    blurb: "Spent years thinking leadership meant doing everything herself — until one overwhelming MUN semester forced her to delegate, and the results changed how she led permanently.",
+    qa: [
+      { q: "What was your biggest challenge as a leader?", a: "Misunderstanding what leadership actually meant — believing she had to personally handle every task. During an overwhelming MUN semester she delegated almost everything out of necessity. The results were excellent, and it completely reframed her understanding: leadership is trust, shared purpose, and knowing when to step back." },
+      { q: "If you could go back to your first 90 days, what would you change?", a: "Define one central goal the whole team can rally around first. Then find people who genuinely believe in it. Then break the goal into departments with clear leads and ownership. That sequence — goal, people, structure — is the entire first 90 days." },
+      { q: "What roles would you prioritize first?", a: "A second-in-command first — trusted, organized, and deeply aligned with the vision. After that: a strong communicator, someone for logistics and operations, someone for finance, and someone for outreach and media." },
+      { q: "What tool or process saved you the most time?", a: "Google Drive with one main folder per project and a sub-folder per department, plus a timeline doc inside each one with columns for action, due date, completion, and person assigned. Meeting agendas and notes were always kept side by side." },
+      { q: "How did you get people outside your team to care?", a: "Consistency above everything — citing how StuCo's weekly, same-day ramen sales conditioned the whole school to expect and support it. Showing up once every two months builds nothing; showing up every week builds recognition." },
+      { q: "Final advice for student leaders?", a: "Don't fear trying new things — everyone makes mistakes and not every plan works. Trust is the core leadership skill: trust your members, trust your advisors, and things tend to work out." }
+    ]
+  },
+  {
+    name: "Panda Nguyen",
+    role: "President, DECA · Founder, Pages of Possibility · Girl Scouts",
+    school: "Concordia International School, Hanoi",
+    tags: ["Systems", "Team Building", "Mistakes"],
+    blurb: "Leads three completely different kinds of organizations at once — competitive, service, and community — and is candid that earning trust, not authority, is still her biggest ongoing challenge.",
+    qa: [
+      { q: "What was your biggest challenge as a leader?", a: "Earning the trust of teammates, not just their compliance. Authority gets people to follow instructions; trust gets people to actually believe in your decisions. She built it through consistent transparency, genuine understanding of people's situations, and steady encouragement." },
+      { q: "If you could go back to your first 90 days, what would you change?", a: "Build a small, trustworthy core team before anything else — specifically securing someone for finance and someone for media first, since those two roles determine long-term sustainability and reach. Then set up clear communication channels connecting that core team." },
+      { q: "What roles would you prioritize first?", a: "Finance, then media and content. Without those two, a project can't sustain itself financially or reach the people it's meant to serve. After that: people with broad reach across different grade levels so the org doesn't graduate out all at once." },
+      { q: "What tool or process saved you the most time?", a: "A single master Google Drive folder with links to every department, so there's one canonical place anyone can start from. Inside, mostly spreadsheets for visible task tracking. Zalo for Girl Scouts specifically, since parents are involved." },
+      { q: "How did you get people outside your team to care?", a: "Opportunistic outreach at existing events — placing flyers in care bags at the school's fund run, asking vendors to mention the cause, and getting the school media team to feature the project rather than trying to generate attention from nothing." },
+      { q: "Final advice for student leaders?", a: "Don't wait until you feel ready. If you have genuine passion and a real desire to contribute, that's enough to start — the knowledge comes from doing, not from preparing to do." }
+    ]
+  },
+  {
+    name: "Thanh Mai Nguyen",
+    role: "Founder, Cash Lits · Head of Ops, MLB Ignite",
+    school: "Hanoi International School",
+    tags: ["Systems", "Mistakes", "Marketing"],
+    blurb: "The most systems-obsessed of every interview — her five-part organizational framework is the closest thing to a single blueprint for running a student club well.",
+    qa: [
+      { q: "What was your biggest challenge as a leader?", a: "Second-guessing herself before launching anything, driven by fear of how people would react. She learned to accept the doubt rather than eliminate it, then plan so deeply that backing out felt harder than moving forward." },
+      { q: "If you could go back to your first 90 days, what would you change?", a: "Set up a real working system immediately — before complexity forces your hand. Her five-part system: an overview doc, a four-column task tracker, a department-organized Drive, a member contact database, and written job descriptions for every role." },
+      { q: "What roles would you prioritize first?", a: "Content and R&D first since it's universal to any org. PR and marketing second, because nothing matters if no one knows about it. Then the 'nitty-gritty' roles — operations, finance, HR — to handle the administrative reality of running it." },
+      { q: "What's a mistake that changed how you lead?", a: "Not asking enough questions before launching. She'd rather over-ask to the point of annoyance than damage her club's reputation by building something that didn't actually serve a real need." },
+      { q: "How did you get people outside your team to care?", a: "By making sure what she built was worth caring about in the first place — surveying the community and consulting experienced people before launch, rather than relying on marketing to compensate for a weak idea." },
+      { q: "Final advice for student leaders?", a: "Understand the real commitment before saying yes, then plan your entire year in advance so the club never gets away from you. A leader has to manage their own life before they can manage anyone else's." }
+    ]
+  },
+  {
+    name: "Chanyoo Kim",
+    role: "Chair, CIRCH · Head of Curations, TEDx · EIC, Thundercloud",
+    school: "Concordia International School, Illinois",
+    tags: ["Delegation", "Team Building", "Systems"],
+    blurb: "Holds more simultaneous leadership roles than anyone interviewed, and credits most of her effectiveness to one habit: reading the room before problems become visible.",
+    qa: [
+      { q: "What was your biggest challenge as a leader?", a: "Keeping team members committed when they don't share her level of passion. The shift that helped: accepting that people work differently, and that her job isn't to give people a new passion but to help direct whatever motivation they already have." },
+      { q: "If you could go back to your first 90 days, what would you change?", a: "Create one shared document listing every task and deadline across the whole org from day one — the lack of it caused real confusion between departments early on. She also now reviews every past document before a new term starts." },
+      { q: "What roles would you prioritize first?", a: "For large orgs: logistics, marketing, and the core content/selection role. For small clubs, she's explicit that forcing formal departments onto a small group can do more harm than good — structure should scale with size." },
+      { q: "What tool or habit saved you the most time?", a: "A shared, org-wide task and deadline doc, plus a habit she calls 'reading the room' — proactively noticing who looks confused or behind in a meeting and reaching out before it becomes a visible problem." },
+      { q: "How did you get people outside your team to care?", a: "Multiple channels at once — a dedicated marketing department, direct outreach to teachers and the activities director, posters, mass emails, and assembly announcements for repeated, unmissable exposure." },
+      { q: "Final advice for student leaders?", a: "Remember you were once a member who found it hard to reach out to your own leaders. Use that empathy to proactively check in on your team before they have to come to you." }
+    ]
+  }
+];
+
+const grid = document.getElementById('caseGrid');
+const backdrop = document.getElementById('modalBackdrop');
+const modalContent = document.getElementById('modalContent');
+
+// ============================================
+// TRAININGS — add a YouTube video here
+// Find the part of the video URL after "watch?v="
+// Example: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+//          videoId would be: "dQw4w9WgXcQ"
+// Leave videoId as "" to show "Video coming soon"
+// ============================================
+const trainings = [
+  { title: "01 — How to Create a Plan", desc: "Turning a vague idea into a goal with a real timeline and a path to execution.", videoId: "" },
+  { title: "02 — How to Recruit a Team", desc: "Job descriptions, hiring workflows, and finding people who actually want to be there.", videoId: "" },
+  { title: "03 — Gathering Resources", desc: "Setting up your Drive, your tools, and your funding before you need them.", videoId: "" },
+  { title: "04 — Delegation", desc: "Giving people real ownership instead of just tasks.", videoId: "" },
+  { title: "05 — Meetings & Management", desc: "Running meetings that produce outcomes, not just updates.", videoId: "" }
+];
+
+function renderTrainings(){
+  const trainingGrid = document.getElementById('trainingGrid');
+  trainingGrid.innerHTML = trainings.map(t => `
+    <div class="training-card">
+      <span class="training-tag ${t.videoId ? 'live' : 'dev'}">${t.videoId ? 'Watch' : 'In Dev'}</span>
+      ${t.videoId
+        ? `<div class="video-wrap"><iframe src="https://www.youtube.com/embed/${t.videoId}" title="${t.title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
+        : `<div class="video-placeholder"><span>Video coming soon</span></div>`
+      }
+      <h4>${t.title}</h4>
+      <p>${t.desc}</p>
+    </div>
+  `).join('');
+}
+renderTrainings();
+
+function renderCards(filter){
+  grid.innerHTML = '';
+  interviews.forEach((person, idx) => {
+    if(filter !== 'all' && !person.tags.includes(filter)) return;
+    const card = document.createElement('div');
+    card.className = 'case-card';
+    card.setAttribute('data-case', 'CASE 0' + (idx+1));
+    card.innerHTML = `
+      <h3>${person.name}</h3>
+      <div class="case-role">${person.role}</div>
+      <div class="case-school">${person.school}</div>
+      <div class="tag-row">${person.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+      <p class="case-blurb">${person.blurb}</p>
+      <button class="open-btn">Open case file</button>
+    `;
+    card.addEventListener('click', () => openModal(idx));
+    grid.appendChild(card);
+  });
+}
+
+function openModal(idx){
+  const person = interviews[idx];
+  modalContent.innerHTML = `
+    <button class="modal-close" id="closeBtn">×</button>
+    <p class="eyebrow">Case 0${idx+1}</p>
+    <h3>${person.name}</h3>
+    <div class="case-role">${person.role}</div>
+    <div class="case-school">${person.school}</div>
+    <div class="tag-row">${person.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+    ${person.qa.map(item => `
+      <div class="qa-block">
+        <div class="qa-q">${item.q}</div>
+        <div class="qa-a">${item.a}</div>
+      </div>
+    `).join('')}
+  `;
+  backdrop.classList.add('open');
+  document.getElementById('closeBtn').addEventListener('click', closeModal);
+}
+
+function closeModal(){
+  backdrop.classList.remove('open');
+}
+
+backdrop.addEventListener('click', (e) => {
+  if(e.target === backdrop) closeModal();
+});
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape') closeModal();
+});
+
+document.getElementById('filterBar').addEventListener('click', (e) => {
+  if(!e.target.classList.contains('filter-btn')) return;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  e.target.classList.add('active');
+  renderCards(e.target.getAttribute('data-tag'));
+});
+
+renderCards('all');
+
+// ============================================
+// RESEARCH BRIEFS — your own synthesized lessons
+// Each brief = one question + your takeaway + the
+// sources (books/videos/articles) that informed it.
+//
+// To add a new brief: copy one whole block below
+// (from { down to },) and edit the text.
+//
+// To add a source inside a brief: copy one object
+// inside the "sources" array and edit it.
+// type must be exactly "Book", "Video", or "Article".
+// link can be left as "" if you don't have one yet.
+// ============================================
+const briefs = [
+  {
+    question: "How do you keep a team accountable without becoming the leader nobody likes?",
+    tags: ["Accountability"],
+    takeaway: "Across every source on this, the same pattern shows up: accountability fails when it's a surprise. The leaders and authors who get this right check in early, privately, and specifically — not publicly or after the deadline has already passed.",
+    sources: [
+      { type: "Book", title: "High Output Management — Andrew Grove", link: "", note: "Introduces the idea of management leverage — small, well-timed check-ins that catch problems before they compound." },
+      { type: "Video", title: "Example: search 'how to hold your team accountable' on YouTube", link: "", note: "Replace this with the actual video once you've watched and summarized it." }
+    ]
+  }
+];
+
+function renderBriefs(){
+  const briefGrid = document.getElementById('briefGrid');
+  briefGrid.innerHTML = '';
+  briefs.forEach((b, idx) => {
+    const card = document.createElement('div');
+    card.className = 'brief-card';
+    card.setAttribute('data-brief', 'BRIEF 0' + (idx+1));
+    card.innerHTML = `
+      <h3>${b.question}</h3>
+      <div class="source-count">${b.sources.length} source${b.sources.length === 1 ? '' : 's'}</div>
+      <div class="tag-row">${b.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+      <button class="open-btn">Open brief</button>
+    `;
+    card.addEventListener('click', () => openBriefModal(idx));
+    briefGrid.appendChild(card);
+  });
+}
+
+function openBriefModal(idx){
+  const b = briefs[idx];
+  modalContent.innerHTML = `
+    <button class="modal-close" id="closeBtnBrief">×</button>
+    <p class="eyebrow">Brief 0${idx+1}</p>
+    <h3>${b.question}</h3>
+    <div class="tag-row">${b.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+    <div class="takeaway-block">
+      <p class="eyebrow">The Takeaway</p>
+      <p>${b.takeaway}</p>
+    </div>
+    ${b.sources.map(s => `
+      <div class="source-item">
+        <div class="source-top">
+          <span class="source-type ${s.type.toLowerCase()}">${s.type}</span>
+          <span class="source-title">${s.link ? `<a href="${s.link}" target="_blank" rel="noopener">${s.title}</a>` : s.title}</span>
+        </div>
+        <div class="source-note">${s.note}</div>
+      </div>
+    `).join('')}
+  `;
+  backdrop.classList.add('open');
+  document.getElementById('closeBtnBrief').addEventListener('click', closeModal);
+}
+
+renderBriefs();
+</script>
+
+</body>
+</html>
