@@ -567,6 +567,10 @@ const modalContent = document.getElementById('modalContent');
 // Example: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 //          videoId would be: "dQw4w9WgXcQ"
 // Leave videoId as "" to show "Video coming soon"
+//
+// OPTIONAL — make the video jump to a specific moment:
+// add start: in seconds. Example: 2 minutes 5 seconds = 125
+// { title: "...", desc: "...", videoId: "abc123", start: 125 }
 // ============================================
 const trainings = [
   { title: "01 — How to Create a Plan", desc: "Turning a vague idea into a goal with a real timeline and a path to execution.", videoId: "" },
@@ -582,7 +586,7 @@ function renderTrainings(){
     <div class="training-card">
       <span class="training-tag ${t.videoId ? 'live' : 'dev'}">${t.videoId ? 'Watch' : 'In Dev'}</span>
       ${t.videoId
-        ? `<div class="video-wrap"><iframe src="https://www.youtube.com/embed/${t.videoId}" title="${t.title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
+        ? `<div class="video-wrap"><iframe src="https://www.youtube.com/embed/${t.videoId}${t.start ? '?start=' + t.start : ''}" title="${t.title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
         : `<div class="video-placeholder"><span>Video coming soon</span></div>`
       }
       <h4>${t.title}</h4>
@@ -657,6 +661,11 @@ renderCards('all');
 // Each brief = one question + your takeaway + the
 // sources (books/videos/articles) that informed it.
 //
+// A brief is NOT limited to one book or one source type.
+// Mix freely — two videos and zero books, three articles,
+// one book and one video, whatever actually answers the
+// question. Just keep adding objects to "sources".
+//
 // To add a new brief: copy one whole block below
 // (from { down to },) and edit the text.
 //
@@ -664,6 +673,15 @@ renderCards('all');
 // inside the "sources" array and edit it.
 // type must be exactly "Book", "Video", or "Article".
 // link can be left as "" if you don't have one yet.
+//
+// For a Video source, add videoId (the part of the
+// YouTube URL after "watch?v=") so it plays inline.
+//
+// OPTIONAL — make a video source jump to a specific
+// moment instead of starting at 0:00. Add start: in
+// seconds. Example: a quote starts at 4 minutes 30
+// seconds into the video = 270.
+// { type: "Video", title: "...", videoId: "abc123", start: 270, note: "..." }
 // ============================================
 const briefs = [
   {
@@ -753,7 +771,7 @@ function openBriefModal(idx){
           <span class="source-type ${s.type.toLowerCase()}">${s.type}</span>
           <span class="source-title">${(s.link && !s.videoId) ? `<a href="${s.link}" target="_blank" rel="noopener">${s.title}</a>` : s.title}</span>
         </div>
-        ${s.videoId ? `<div class="video-wrap" style="margin-top:10px;"><iframe src="https://www.youtube.com/embed/${s.videoId}" title="${s.title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>` : ''}
+        ${s.videoId ? `<div class="video-wrap" style="margin-top:10px;"><iframe src="https://www.youtube.com/embed/${s.videoId}${s.start ? '?start=' + s.start : ''}" title="${s.title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>` : ''}
         <div class="source-note">${s.note}</div>
       </div>
     `).join('')}
